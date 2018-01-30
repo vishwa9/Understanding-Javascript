@@ -5,7 +5,7 @@ function greet(input){
 }
 
 var sayHi = greet('Hi!!');
-sayHi('vishwa');
+sayHi('vishwa'); // Output: Hi!! vishwa
 
 // little more complex example :)
 
@@ -65,3 +65,20 @@ var run1 = buildFunction2();
 run1[0]; // 0
 run1[1]; // 1
 run1[2]; // 2
+
+
+//Callbacks
+//A function you give to another function to be run when the other function is finished
+function tellMeWhenDone(callback){
+	var a = 1000;
+	for(var i=0; i < 5000000; i++){}
+	callback();
+}
+
+tellMeWhenDone(function(){
+	console.log('Vishwa I');
+});  // Vishwa I
+
+tellMeWhenDone(function(){
+	console.log('Vishwa II');
+}); //Vishwa II
